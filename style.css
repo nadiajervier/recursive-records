@@ -51,6 +51,21 @@ table {
 	box-sizing: border-box;
 }
 
+/* --- KEYFRAMES --- */
+
+/* Rise on scroll - Chrome browsers only as of 21-12-2024  */
+@supports (animation-timeline: view()) {
+  @keyframes rise {
+    from { bottom: -2.6rem }
+    to   { bottom: 2.4rem }
+  }
+  p#back-to-top {
+    animation: rise auto linear both;
+    animation-timeline: scroll();
+    animation-range: 500px 800px;
+  }
+}
+
 /* --- PAGE STYLING --- */
 body {
 	font-family: 'forum', times, times new roman, serif;
